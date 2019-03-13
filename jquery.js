@@ -11,6 +11,10 @@
  *
  * Date: 2018-01-20T17:24Z
  */
+/**
+ * translator:YooHoeh
+ * github:github.com/yoohoeh
+ */
 ( function( global, factory ) {
 
 	"use strict";
@@ -24,6 +28,8 @@
 		// This accentuates the need for the creation of a real `window`.
 		// e.g. var jQuery = require("jquery")(window);
 		// See ticket #14549 for more info.
+		//对于CommonJS和类似CommonJS的环境，即具有`窗口`展示的环境只需要执行后面的匿名函数就可以直接使用JQ，
+		//对于没有窗口环境的类似于nodejs的则需要使用module.exports的方法来使用
 		module.exports = global.document ?
 			factory( global, true ) :
 			function( w ) {
@@ -37,6 +43,7 @@
 	}
 
 // Pass this if window is not defined yet
+//如果没有定义window则跳过
 } )( typeof window !== "undefined" ? window : this, function( window, noGlobal ) {
 
 // Edge <= 12 - 13+, Firefox <=18 - 45+, IE 10 - 11, Safari 5.1 - 9+, iOS 6 - 9.1
